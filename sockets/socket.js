@@ -1,12 +1,27 @@
 
 // importamos el io desde el index
 const {io} = require('../index');
+const Bands = require('../models/bands');
+const Band = require('../models/band');
+
+// llamamos las clases de bandas
+const bands = new Bands();
+
+// anadir una nuewva banda
+bands.addBand( new Band('Queen') );
+bands.addBand( new Band('Bon Jovi') );
+bands.addBand( new Band('Heroes del Silecio') );
+bands.addBand( new Band('Metalica') ); 
+
+// console.log(bands);
 
 // Mensajes de Sockets. cliente es la computadores que se conecta al socket
 io.on('connection', client => {
-  
     console.log('Cliente Conectado (desde JS)');
   
+    // enviar las bandas a los clientes que se conectan al socket
+    client.emit('active-bands', bands.getBands());
+
     // escuchar el mensaje desde el cliente
     client.on('mensaje', payload => { 
       console.log('Mensaje !!!', payload); 

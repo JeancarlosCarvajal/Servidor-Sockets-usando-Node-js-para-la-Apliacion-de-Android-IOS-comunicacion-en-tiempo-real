@@ -1,13 +1,12 @@
-// Descargar y usar el paquete uuid con el comando npm i uuid... v6 es la version. Fernando tenia la version 4 v4
-const { v6: uuidV6 } = require('uuid');
-// este uuid va generar un id enorme algo asi como akjsbcijabsc-aklscbiasbc-jasbhciuasbc
-
+// Descargar y usar el paquete uuid con el comando npm i uuid... Doc: https://www.npmjs.com/package/uuid
+const { v4: uuidv4 } = require('uuid');
+// este uuid va generar un id enorme algo asi como 397413f2-ce5b-4e85-8e4d-8d391ae43b4b
 
 class Band {
 
     constructor( name = 'no-name' ) {
 
-        this.id = uuidV6(); // se crea identificador unico con el paquete de uuid version 6
+        this.id = uuidv4(); // se crea identificador unico con el paquete de uuid
         this.name  = name;
         this.votes = 0;
 

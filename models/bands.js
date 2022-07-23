@@ -1,4 +1,5 @@
-
+// llamo el modelo de Band
+const Band = require('./band');
 
 
 class Bands {
@@ -29,8 +30,7 @@ class Bands {
                 return band;
             }
         });
-    }
-
+    } 
 }
 
 // exportar la clase

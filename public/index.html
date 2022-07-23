@@ -29,17 +29,23 @@
 
         // recibir un mensaje del administrador
         socket.on('mensaje', function (payload) {
-            console.log('Escuchando: ', payload)
+            // console.log('Escuchando: ', payload);
         });
 
         // recibir un emitir-mensaje del administrador
         socket.on('emitir-mensaje', function (payload) {
+            // console.clear();
             console.log('emitir-mensaje: ');
             console.log('emitir-mensaje: ', payload['nombre']);
             console.log('emitir-mensaje: ', payload['apellido']);
         });
 
-
+        // recibir un active-bands del administrador
+        socket.on('active-bands', function (payload) {
+            // console.log('active-bands: ', payload); 
+            console.clear();
+            console.table(payload); 
+        });
 
     </script>
 </body>
