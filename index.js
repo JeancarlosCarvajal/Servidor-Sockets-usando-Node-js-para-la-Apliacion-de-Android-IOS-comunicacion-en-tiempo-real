@@ -9,7 +9,7 @@ const app = express();
 
 // Creamos el servidor de Sockets en Node
 const server = require('http').createServer(app);
-// exportamos el io al archivo de socket
+// exportamos el io al archivo de socket para poder exportarlo desde /sockets/sockets.js
 module.exports.io = require('socket.io')(server);
 // incuimos el archivo de socket que separamos para mayor orden en el proyecto
 require('./sockets/socket.js')
